@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HomeAutomation.Pages.Garden">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="garden.jpg" 
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HeightRequest="450"
+                       />
+
+                <Image
+                    Source="white_gradient.png"
+                    Aspect="Fill"
+                    VerticalOptions="EndAndExpand"
+                    />
+
+
+            </Grid>
+
+            <TableView Intent="Data" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell x:Name="grass_cutting_robot" Text="Grass Cutting Robot" On="False" />
+                        <SwitchCell x:Name="water_Sprinklers" Text="Water Sprinklers" On="False"/>
+                        <SwitchCell x:Name="garden_lights" Text="Garden Lights" On="False" />
+                        <SwitchCell x:Name="path_lights" Text="Path Light" On="False"/>
+                        
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

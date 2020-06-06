@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HomeAutomation.Pages.StudyRoom">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="study_room.jpg" 
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HeightRequest="450"
+                       />
+
+                <Image
+                    Source="white_gradient.png"
+                    Aspect="Fill"
+                    VerticalOptions="EndAndExpand"
+                    />
+
+
+            </Grid>
+
+            <TableView Intent="Data" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell x:Name="StudyRoomLight" Text="Study Room Light" On="False"/>
+                        <SwitchCell x:Name="Table_Lamp" Text="Table Lamp" On="False" />
+                        <SwitchCell x:Name="Curtains" Text="Curtains" On="False"/>
+                        <SwitchCell x:Name="AirConditioning" Text="Air Conditioning" On="False" />
+                        <SwitchCell x:Name="Fan" Text="Fan" On="False" />
+                        <SwitchCell x:Name="Heater" Text="Heating" On="False" />
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="FillAndExpand"
+                                         Orientation="Vertical">
+                                <Label
+                                    Text="Heating Level"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="CenterAndExpand"
+                                    />
+                                <Slider
+                                    Minimum="0"
+                                    Maximum="100"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="300"
+                                    MinimumTrackColor="Magenta"
+                                    MaximumTrackColor="Gray"
+                                    />
+                            </StackLayout>
+                        </ViewCell>
+                        <SwitchCell x:Name="CleaningRobot" Text="Clean the Study Room" On="False" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

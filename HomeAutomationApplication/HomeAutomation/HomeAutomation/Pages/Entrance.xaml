@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HomeAutomation.Pages.Entrance">
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="entrance.jpg" 
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HeightRequest="450"
+                       />
+
+                <Image
+                    Source="white_gradient.png"
+                    Aspect="Fill"
+                    VerticalOptions="EndAndExpand"
+                    />
+
+
+            </Grid>
+
+            <TableView Intent="Data" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell x:Name="Gate_light" Text="Surrounding Gateway Lights" On="False" />
+                        <SwitchCell x:Name="Front_gate" Text="Front Gate" On="False"/>
+                        <SwitchCell x:Name="DoorBell" Text="Door Bell" On="True" />
+                        <ViewCell>
+                            <StackLayout
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                >
+                                <Label Text="Front Gate Camera"
+                                       HorizontalOptions="Center"
+                                       TextColor="Magenta"
+                                       />
+                                <Image
+                                    Source="frontgate.jpg"
+                                    Aspect="AspectFill"
+                                    HeightRequest="230"
+                                    />
+
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

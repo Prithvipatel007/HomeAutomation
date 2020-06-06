@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HomeAutomation.Pages.Kitchen">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="CenterAndExpand">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="kitchen.jpg" 
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HeightRequest="450"
+                       />
+
+                <Image
+                    Source="white_gradient.png"
+                    Aspect="Fill"
+                    VerticalOptions="EndAndExpand"
+                    />
+
+
+            </Grid>
+
+            <TableView Intent="Data" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell x:Name="KitchenLight" Text="Kitchen Light" On="False"/>
+                        <SwitchCell x:Name="Refrigerator" Text="Refrigerator" On="False" />
+                        <SwitchCell x:Name="Curtains" Text="Curtains" On="False"/>
+                        <SwitchCell x:Name="Oven" Text="Oven" On="False" />
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Text="Oven Temperature"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Padding="15,0,0,0"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    />
+
+                                <Slider
+                                    x:Name="Temperature"
+                                    Minimum="0"
+                                    Maximum="260"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    WidthRequest="300"
+                                    MinimumTrackColor="Magenta"
+                                    MaximumTrackColor="Gray"
+                                    />
+
+                            </Grid>
+                        </ViewCell>
+                        <SwitchCell x:Name="DishWasher" Text="Dish Washer" On="False" />
+                        <SwitchCell x:Name="CleaningRobot" Text="Clean the kitchen" On="False" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

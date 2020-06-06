@@ -1,16 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="HomeAutomation.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" 
+                     BackgroundColor="LightGray"
+                     >
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Spacing="20"
+                >
+                <Button
+                    Text="Living Room"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="LivingRoomButtonClicked"
+                    />
+                <Button
+                    Text="Study Room"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="StudyRoomButtonClicked"
+                    />
+                <Button
+                    Text="Kitchen"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="KitchenButtonClicked"
+                    />
+                <Button
+                    Text="Bedroom"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="BedroomButtonClicked"
+                    />
+                <Button
+                    Text="Garden"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="GardenButtonClicked"
+                    />
+                <Button
+                    Text="Entrance"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="EntranceButtonClicked"
+                    />
 
-</ContentPage>
+                <Button
+                    Text="Back to Home Page"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Clicked="HomeButtonClicked"
+                    />
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+                    <Label
+                        Text="Welcome to home Automation Project"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                    />
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>
